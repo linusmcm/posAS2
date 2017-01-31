@@ -1,0 +1,44 @@
+<?php
+/////////////////////////////////////////////////////
+include '../includes/customersConectString.php';
+/////////////////////////////////////////////////////
+//error reporting
+error_reporting (E_ALL ^ E_NOTICE);
+/////////////////////////////////////////////////////
+//variable declaration
+/////////////////////////////////////////////////////
+$active = "Y";
+$pos = 
+$index = 0;
+$suburb = Array();
+$suburb_code  = Array();
+$delivery_cost = Array();
+$ep_code = "";
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+$city_code = $_REQUEST['city_code'];
+/////////////////////////////////////////////////////
+//datbase connection
+/////////////////////////////////////////////////////
+$link = mysql_connect($machine, $uName, $pCode);
+mysql_select_db("customers", $link);
+/////////////////////////////////////////////////////
+//datbase query
+$result = mysql_query("SELECT * FROM suburb WHERE city_code = '$city_code' ORDER BY suburb");
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////	
+while($row = mysql_fetch_array($result))
+	{
+			$suburb[$index] = $row['suburb'];
+			$suburb_code [$index] = $row['suburb_code'];
+			$delivery_cost[$index] = $row['delivery_cost']; 
+			$index++;
+	}
+/////////////////////////////////////////////////////
+//pass records to array
+/////////////////////////////////////////////////////	
+print "&suburb=" . urlencode(utf8_encode(serialize($suburb)));
+print "&suburb_code=" . urlencode(utf8_encode(serialize($suburb_code)));
+print "&delivery_cost=" . urlencode(utf8_encode(serialize($delivery_cost)));
+mysql_close($link)
+?>

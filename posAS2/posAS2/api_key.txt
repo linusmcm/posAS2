@@ -1,0 +1,4 @@
+AIzaSyDX-gJ8q2I6XhqJ51OkaGCaK-_DcPB4nzc
+https://maps.googleapis.com/maps/api/distancematrix/json?origins=222+york+street+launceston+tasmania &destinations=10+pascoe+street+launceston+tasmania&mode=bicycling&language=fr-FR&sensor=false&key=AIzaSyDX-gJ8q2I6XhqJ51OkaGCaK-_DcPB4nzc
+http://maps.googleapis.com/maps/api/distancematrix/xml?origins=Vancouver+BC|Seattle&destinations=San+Francisco|Vancouver+BC&mode=bicycling&language=fr-FR&sensor=false&key=AIzaSyDX-gJ8q2I6XhqJ51OkaGCaK-_DcPB4nzc
+20+canopus+drive+blackstone+heights
